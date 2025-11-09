@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediVision AI - Medical Image Analysis</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/transitions.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <span class="brand-text">MediVision AI</span>
+            </div>
+            <div class="nav-actions">
+                <div class="status-pill">
+                    <div class="status-dot"></div>
+                    <span>Ready</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>AI-Powered Medical Diagnosis</h1>
+                    <p>Advanced medical image analysis using AI technology. Upload medical scans, X-rays, or clinical images for instant AI-powered analysis and diagnostic assistance.</p>
+                    
+                    <div class="cta-actions">
+                        <a href="/app" class="cta-button primary">
+                            <i class="fas fa-microscope"></i>
+                            Start Diagnosis
+                        </a>
+                        <a href="#features" class="cta-button secondary">
+                            <i class="fas fa-heartbeat"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <div class="demo-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="demo-title">MediVision AI</span>
+                        </div>
+                        <div class="demo-content">
+                            <div class="demo-image">
+                                <i class="fas fa-x-ray"></i>
+                            </div>
+                            <div class="demo-detections">
+                                <div class="detection-item">Fracture <span>94%</span></div>
+                                <div class="detection-item">Pneumonia <span>89%</span></div>
+                                <div class="detection-item">Normal <span>76%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section" id="features">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>AI Diagnosis</h3>
+                    <p>Advanced AI algorithms trained on medical datasets for accurate diagnostic assistance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Medical Chat</h3>
+                    <p>Intelligent medical consultations with AI trained on clinical knowledge</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Instant Results</h3>
+                    <p>Real-time medical image analysis with immediate diagnostic insights</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/transitions.js') }}"></script>
+</body>
+</html>

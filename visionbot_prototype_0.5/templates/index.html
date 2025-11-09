@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediVision AI - Medical Image Analysis</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/transitions.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <span class="brand-text">MediVision AI</span>
+            </div>
+            <div class="nav-actions">
+                <a href="/" class="nav-link" style="margin-right: 16px; color: #e2e8f0; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <div class="status-pill">
+                    <div class="status-dot"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Grid -->
+        <div class="main-grid">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <div class="panel-card image-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-x-ray"></i> <span id="cardTitle">Upload Medical Image</span></h3>
+                        <button class="clear-btn" id="clearBtn" style="display: none;" onclick="clearImage()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="image-content">
+                        <div class="upload-zone" id="uploadZone" onclick="document.getElementById('imageInput').click()">
+                            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drop medical image here or click to browse</p>
+                                <span class="upload-hint">X-rays, CT scans, MRI - PNG, JPG up to 16MB</span>
+                            </div>
+                        </div>
+                        <div class="image-preview" id="imagePreview" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="panel-card detections-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-diagnoses"></i> Medical Findings</h3>
+                        <div class="detection-count" id="detectionCount">0</div>
+                    </div>
+                    <div class="detections-list" id="detections">
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <p>No findings yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Chat -->
+            <div class="right-panel">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message-group bot">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-bubble">
+                                <div class="message-header">
+                                    <span class="sender-name">MediVision AI</span>
+                                    <span class="message-time">now</span>
+                                </div>
+                                <div class="message-text">
+                                    Welcome to MediVision AI! I can assist you with:<br>
+                                    • Upload medical images for AI-powered diagnostic analysis<br>
+                                    • Discuss medical findings and provide clinical insights<br>
+                                    • Use voice input (🎤) for hands-free interaction<br>
+                                    • Toggle voice responses (🔊) for accessibility
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <div class="input-container">
+                            <button class="voice-btn" id="voiceBtn" title="Voice Input">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <input type="text" id="messageInput" placeholder="Ask about the medical findings..." disabled>
+                            <button class="voice-toggle-btn" id="voiceToggleBtn" title="Toggle Voice Response">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <button class="send-btn" id="sendBtn" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Analyzing Medical Image</h3>
+            <p>Processing with AI diagnostic algorithms...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/transitions.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
