@@ -1,4 +1,4 @@
-# VisionBot - AI Image Analysis Chat
+# MediVision AI- AI Image Analysis Chat
 
 A modern web application that combines YOLO object detection with AI-powered chat capabilities through OpenRouter API.
 
